@@ -1,6 +1,61 @@
 
 * {
     box-sizing: border-box;
+    /* border: 1px dashed fuchsia; */
     
 }
+
+h3 {
+    color: #209A32;
+    display: inline;
+    font-family:  'Franklin Gothic Medium', Arial, sans-serif, sans-serif;
+    font-weight: bold;
+    font-size: xx-large;
+    
+}
+
+.navbar {
+    /* border: 1px dotted aqua; */
+    padding-right: 0px;
+    
+}
+
+    .navContainer {
+        
+  
+        /* border: black 2px solid; */
+        padding-left: 0;
+        margin-left: 5%;
+        
+    }
+
+        .navItem {
+            font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            position: relative;
+            top: 13px;
+            /* border: 1px solid yellow; */
+            left: 0;
+        }
+
+        .homeIcon {
+            margin-right: 20px;
+        }
+
+    
+        .navLogo {
+            margin-right: 40px;
+        }
+
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+          }
+          
+        .carousel-inner img {
+            width: 100%; /* Set width to 100% */
+            margin: auto;
+            min-height:200px;
+        }
+      
 
