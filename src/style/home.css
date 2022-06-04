@@ -5,7 +5,7 @@
     
 }
 
-h3 {
+.App h3 {
     color: #209A32;
     display: inline;
     font-family:  'Franklin Gothic Medium', Arial, sans-serif, sans-serif;
@@ -36,7 +36,10 @@ h3 {
             top: 13px;
             /* border: 1px solid yellow; */
             left: 0;
+            
         }
+
+    
 
         .homeIcon {
             margin-right: 20px;
@@ -47,15 +50,63 @@ h3 {
             margin-right: 40px;
         }
 
-        footer {
-            background-color: #f2f2f2;
-            padding: 25px;
-          }
+h1 {
+    color: blanchedalmond
+}
+
+.footer {
+    
+    background-color: #3a3038;
+    font-size: 13px;
+    height: 60vh;
+    color: bisque;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+    .businessInfo {
+        display: flex;
+        flex-direction: row;
+     
+    }
+
+        .leftHalf {
           
-        .carousel-inner img {
-            width: 100%; /* Set width to 100% */
-            margin: auto;
-            min-height:200px;
+            width: 50%;
         }
-      
+     
+
+            .top p:first-child {
+                position: relative;
+                bottom: -15px;
+            }
+
+            hr {
+                height: 0px;
+                border: none;
+                border-top: 3px solid bisque;
+            }
+
+           .bottom p:first-child {
+               position: relative;
+               bottom: -15px;
+           }
+           
+
+        .rightHalf {
+         
+            width: 50%;
+        }
+
+        .quarter > ul > a {
+            text-decoration: none;
+            color: bisque;
+        }
+
+    #copyright {
+        position: relative;
+        top: 50px;
+    }
 
