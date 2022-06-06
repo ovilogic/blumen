@@ -1,11 +1,15 @@
 
-import { Navbar, Nav, Carousel, Image } from 'react-bootstrap';
+import { Navbar, Nav, Carousel } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import logo from './images/blumenLogo.png'
 import './style/home.css'
 import { RiHome2Fill } from 'react-icons/ri';
-import { IconContext } from "react-icons";
+import { AiOutlineMail } from 'react-icons/ai';
+import { BsTelephone } from 'react-icons/bs';
+import { FaMobileAlt } from 'react-icons/fa';
+import { BiMap } from 'react-icons/bi';
+import { IconContext} from "react-icons";
 import slide1 from './images/WhatsApp Image 2022-06-03 at 1.29.38 PM.jpeg'
 import slide2 from './images/Alex 2022-06-02 at 8.41.28 PM.jpeg'
 import slide3 from './images/WhatsApp Image 2022-06-03 at 1.56.16 PM.jpeg'
@@ -14,6 +18,11 @@ import slide3 from './images/WhatsApp Image 2022-06-03 at 1.56.16 PM.jpeg'
 function App() {
 
   return (
+    // body has 4 main elements:
+    // 1.Navbar
+    // 2. Carousel
+    // 3. On Display
+    // 4. Footer
     <div className="App">
       
       <Navbar collapseOnSelect className='navbar'
@@ -41,7 +50,7 @@ function App() {
           </Navbar.Collapse>
         </Container> 
         <Navbar.Brand href="#home" className='navLogo'>
-             <h3><em>AR flora</em></h3>
+             <h3 id='logoName'><em>AR flora</em></h3>
           <img
                 src={logo}
                 alt="brand logo"
@@ -99,6 +108,22 @@ function App() {
         </Carousel.Item>
       </Carousel>
 
+      <div className='onDisplay'>
+        <h1 id='displayTitle'>Produse Noi</h1>
+        <div class="grid-container">
+               
+                <div class="displayItem" ><p>panseluțe</p></div>
+                <div class="displayItem"><p>Client Branding</p></div>
+                <div class="displayItem"><p>HTML/CSS</p></div>
+                <div class="displayItem"><p>User Testing</p></div>
+              
+                <div class="displayItem"><p>Wireframes</p></div>
+                <div class="displayItem"><p>Custom Graphics</p></div>
+                <div class="displayItem"><p>Documentation</p></div>
+                <div class="displayItem"><p>System Support</p></div>
+            </div>
+      </div>
+
       {/* Footer divided in two:
       1. .businessInfo: All the paragraphs and lists except for Copyright.
       2. .copyright. */}
@@ -117,37 +142,111 @@ function App() {
             </div>
             
           </div>
-          <div className='righttHalf'>
-            <div className='quarter'>
-              <ul>
-                <a href='mailto:info@arflora.ro'>
-                  &gt; Scrie-ne <br />
-                </a>
-                <a href='mailto:info@arflora.ro'>
-                  &gt; Scrie-ne <br />
-                </a>
-                <a href='mailto:info@arflora.ro'>
-                  &gt; Scrie-ne <br />
-                </a>
-                <a href='mailto:info@arflora.ro'>
-                  &gt; Scrie-ne <br />
-                </a>
-              </ul>
-            </div>
+
+          <div className='rightHalf'>
+            <p>CONTACTATI-NE</p>
+            <hr></hr>
+            <ul>
+              <li><a href='mailto:info@arflora.ro'>
+                <IconContext.Provider value={{ size: '22px'}}>
+                  <AiOutlineMail />
+                </IconContext.Provider>
+                
+              </a> info@arflora.ro
+              </li>
+              <li> <IconContext.Provider value={{ size: '22px'}}>
+                <BsTelephone />
+              </IconContext.Provider> +40/257/381870</li>
             
+              <li> <IconContext.Provider value={{ size: '22px'}}>
+                <FaMobileAlt />
+              </IconContext.Provider> +40722349066 </li>
+              <li> <IconContext.Provider value={{ size: '22px'}}>
+                <BiMap />
+              </IconContext.Provider> Sinleani, nr. 359, jud. Arad</li>
+
+              <hr/>
+
+              <li>
+                <a href='https://www.blumenzentrale.de'>
+                  Bayerische Blumen Zentrale
+                </a>{' '}
+                <a href='mailto:info@blumenzentrale.de'>
+                <IconContext.Provider value={{ size: '22px'}}>
+                  <AiOutlineMail />
+                </IconContext.Provider>
+                </a> 
+              </li>
+              
+              <li>
+                <a href='http://blumenzentrale.de'>
+                Blumen Zentrale Lindau
+              </a>{' '}
+                <a href='mailto:lindau@blumenzentrale.de'>
+                <IconContext.Provider value={{ size: '22px'}}>
+                  <AiOutlineMail />
+                </IconContext.Provider>
+                </a> 
+              </li>
+
+              <li><a href='http://blumenzentrale.de'>
+                Blumen Zentrale Straubing
+              </a>{' '}
+                <a href='mailto:straubing@blumenzentrale.de'>
+                <IconContext.Provider value={{ size: '22px'}}>
+                  <AiOutlineMail />
+                </IconContext.Provider>
+                </a> 
+              </li>
+
+              <li><a href='http://www.salzachblume.at'>
+                Slazachblume
+              </a>{' '}
+                <a href='mailto:info@salzachblume.at'>
+                <IconContext.Provider value={{ size: '22px'}}>
+                  <AiOutlineMail />
+                </IconContext.Provider>
+                </a> 
+              </li>
+
+              <li><a href='http://donaublume.com'>
+                Donaublume
+              </a> {' '}
+                <a href='mailto:info@donaublume.com'>
+                <IconContext.Provider value={{ size: '22px'}}>
+                  <AiOutlineMail />
+                </IconContext.Provider>
+                </a> 
+              </li>
+
+              <li><a href='http://www.dunavirag.hu'>
+                Dunavirag Centrum
+              </a> {' '}
+                <a href='mailto:info@dunavirag.hu'>
+                <IconContext.Provider value={{ size: '22px'}}>
+                  <AiOutlineMail />
+                </IconContext.Provider>
+                </a> 
+              </li>
+            </ul>
           </div>
+        {/*End of businessInfo.  */}
         </div>
+        {/* copyright is a div so it will naturally go under. */}
         <div id='copyright'>
-          <p>Copyright 2020 © Bayerische Blumen Zentrale GmbH, wholesale for flowers, plants, decorative and florist supplies, own garden centers, Münchner Str. 2a, 85599 Parsdorf near Munich</p>
+          <p>Copyright 2022 © AR flora</p>
+          <a href="https://www.freepik.com/vectors/hand-drawing">Hand drawing vector created by rawpixel.com - www.freepik.com</a>
         </div>
         
 
-        
+      {/* End of footer. */}  
       </div>
-    ` `
-  
+    
+    {/* End of wrapper div.*/}
     </div>
+    // End of return.
   );
+  // End of function.
 }
 
 export default App;
