@@ -10,12 +10,42 @@ import { BsTelephone } from 'react-icons/bs';
 import { FaMobileAlt } from 'react-icons/fa';
 import { BiMap } from 'react-icons/bi';
 import { IconContext} from "react-icons";
-import slide1 from './images/WhatsApp Image 2022-06-03 at 1.29.38 PM.jpeg'
-import slide2 from './images/Alex 2022-06-02 at 8.41.28 PM.jpeg'
-import slide3 from './images/WhatsApp Image 2022-06-03 at 1.56.16 PM.jpeg'
+import slide1 from './images/WhatsApp Image 2022-06-03 at 1.29.38 PM.jpeg';
+import slide2 from './images/Alex 2022-06-02 at 8.41.28 PM.jpeg';
+import slide3 from './images/WhatsApp Image 2022-06-03 at 1.56.16 PM.jpeg';
+import plant1 from './images/plant1.png';
+import plant2 from './images/plant2.png';
+import plant3 from './images/plant3.png';
+import plant4 from './images/plant4.png';
+import plant5 from './images/plant5.png';
+import plant6 from './images/plant6.png';
+import plant7 from './images/plant7.png';
+import plant8 from './images/plant8.png';
+import plant9 from './images/plant9.png';
 
 
 function App() {
+
+  
+  const hotObj = [
+    
+    ['Planta 2', plant2],
+    ['Planta 3', plant3],
+    ['Planta 4', plant4],
+    ['Planta 5', plant5],
+    ['Planta 6', plant6],
+    ['Planta 7', plant7],
+    ['Planta 8', plant8],
+    ['Planta 9', plant9]
+  ]
+  const whatsHot = () => {
+    return hotObj.map(x => {
+    return (
+    <div key={hotObj.indexOf(x)}>
+      <img className="displayItem" src={x[1]} /><p>{x[0]}</p>
+    </div>)}
+    )
+  }
 
   return (
     // body has 4 main elements:
@@ -110,18 +140,12 @@ function App() {
 
       <div className='onDisplay'>
         <h1 id='displayTitle'>Produse Noi</h1>
-        <div class="grid-container">
-               
-                <div class="displayItem" ><p>panseluțe</p></div>
-                <div class="displayItem"><p>Client Branding</p></div>
-                <div class="displayItem"><p>HTML/CSS</p></div>
-                <div class="displayItem"><p>User Testing</p></div>
-              
-                <div class="displayItem"><p>Wireframes</p></div>
-                <div class="displayItem"><p>Custom Graphics</p></div>
-                <div class="displayItem"><p>Documentation</p></div>
-                <div class="displayItem"><p>System Support</p></div>
-            </div>
+        <div className="grid-container">  
+          {whatsHot()}
+        </div>
+        <div className='moreHighlights'>
+          <button type='button' className='more'>mai multe...</button>
+        </div>
       </div>
 
       {/* Footer divided in two:
@@ -235,13 +259,11 @@ function App() {
         {/* copyright is a div so it will naturally go under. */}
         <div id='copyright'>
           <p>Copyright 2022 © AR flora</p>
-          <a href="https://www.freepik.com/vectors/hand-drawing">Hand drawing vector created by rawpixel.com - www.freepik.com</a>
+          <a href="https://www.freepik.com/vectors/hand-drawing">Hand drawing vector created by rawpixel.com - www.freepik.com</a><br/>
+          <a href='https://www.freepik.com/vectors/flower-pot'>Flower pot vector created by pch.vector - www.freepik.com</a>
         </div>
-        
-
       {/* End of footer. */}  
       </div>
-    
     {/* End of wrapper div.*/}
     </div>
     // End of return.

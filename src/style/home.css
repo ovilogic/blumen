@@ -60,19 +60,19 @@ h1 {
 }
 
 .onDisplay {
-    height: 110vh;
+    height: 130vh;
     margin-top: 0px;
     background-image: url('../images/plantCurtain.png');
     background-attachment: fixed;
     background-repeat: repeat-x;
     background-size: cover;
+    overflow-y: scroll;
+  
     
 }
 
-
-
     #displayTitle {
-        
+
         /* border: peru 2px dashed; */
         color: rebeccapurple;
         font-family: 'Lucida Handwriting', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -84,73 +84,63 @@ h1 {
 
     .grid-container {
         display: grid;
-        position: relative;
-        left: 10vw;
+        
+        position: relative;   
+        left: 10vw;     
         top: 160px;
         grid-template-columns: auto auto auto auto;
         grid-template-rows: auto auto auto auto;
         grid-gap: 10px;
-        grid-row-gap: 5vh;
+        grid-row-gap: 1vh;
         max-width: 85%;
     }
 
-    /* .category-title {
-        padding-left: 2px;
-        font-size: 28px;
-        color: rgb(51, 89, 135);
-        max-width: 80%;
-        margin-bottom: 2vh;
-    } */
-
-    /* .category {
-        width: 80%;
-        padding: 2vh;
-        font-size: 22px;
-        color: rgb(90, 90, 90);
-        text-decoration: none;
-    } */
-
     .displayItem {
-        background-image: url('../images/home_top_3.jpg');
         background-size: cover;
         font-size: 22px;
         padding: 2vh;
-        width: 200px;
-        height: 300px;
+        width: 300px;
+        height: 500px;
         color: black;
     }
     
     .grid-container a {
         text-decoration: none;
         height: 100%;
-
         color: rgb(90, 90, 90);
     }
 
-    /* 'Work with us' button */
-    .work {
-        border: none;
-        height: 8vh;
-        min-width: 15vw;
-        color: white;
-        font-size: 36px;
-        background-color: rgb(51, 89, 135);
-        border-radius: 30px;
-        position: relative;
-        top: 240px;
-        left: 42%;
+    /* more highlights button */
+    .moreHighlights {
+        width: 100%;
+        text-align: center;
+        margin-top: 180px;
+        margin-bottom: 160px;
     }
 
-        .work:hover {
-            color: magenta;
+    .more {
+        height: 50px;
+        width: 200px;
+        color: white;
+        font-size: 26px;
+        background-color: #209A32;
+        border-radius: 30px;
+        
+        box-shadow: 0px 10px 5px black;
+        
+    }
+
+        .more:hover {
+            color: bisque;
         }
 
-        .work:active {
-            box-shadow: inset 0px 0px 5px navy;
-            height: 7.9vh;
-            width: 14.9vw;
-            font-size: 35.9px;
-            color: magenta;
+        .more:active {
+            box-shadow: inset 2px 2px 20px navy;
+            height: 49px;
+            width: 199px;
+            font-size: 25.9px;
+            color: burlywood;
+            transform: translateY(10px);
         }
     
 
@@ -158,7 +148,7 @@ h1 {
 
 
 .footer {
-    
+    border-top: 2px magenta solid;
     background-color: #3a3038;
     font-size: 15px;
     overflow: auto;
@@ -217,6 +207,7 @@ h1 {
     #copyright {
         position: relative;
         top: 50px;
+      
         
     }
 
