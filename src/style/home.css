@@ -28,6 +28,9 @@
         margin-bottom: -2%;
         
     }
+        /* .navContainer {
+            width: 50vw;
+        } */
 
         .navItem {
             font-family: 'Open Sans', Arial, Helvetica, sans-serif;
@@ -54,25 +57,41 @@
                 position: relative;
                 bottom: -15px;
             }
+    
+    .hanging {
+        height: 200px;
+        width: 130px;
+        position: absolute;
+        right: 92px;
+        top: 88px;
+        
+    }
 
 h1 {
     color: blanchedalmond
 }
 
+.carousel {
+    max-height: 90vh;
+    width: 100%;
+}
+
+    .carousel img {
+        max-width: 100%;
+        max-height: 90vh;
+    }
+
 .onDisplay {
-    height: 130vh;
+    height: 2800px;
     margin-top: 0px;
     background-image: url('../images/plantCurtain.png');
     background-attachment: fixed;
     background-repeat: repeat-x;
     background-size: cover;
-    overflow-y: scroll;
-  
-    
+    position: relative;
 }
 
     #displayTitle {
-
         /* border: peru 2px dashed; */
         color: rebeccapurple;
         font-family: 'Lucida Handwriting', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -84,23 +103,23 @@ h1 {
 
     .grid-container {
         display: grid;
-        
         position: relative;   
-        left: 10vw;     
+        left: 10%;     
         top: 160px;
         grid-template-columns: auto auto auto auto;
         grid-template-rows: auto auto auto auto;
         grid-gap: 10px;
         grid-row-gap: 1vh;
         max-width: 85%;
+        z-index: 1;
     }
 
     .displayItem {
         background-size: cover;
         font-size: 22px;
         padding: 2vh;
-        width: 300px;
-        height: 500px;
+        width: 290px;
+        height: 400px;
         color: black;
     }
     
@@ -112,10 +131,15 @@ h1 {
 
     /* more highlights button */
     .moreHighlights {
+       
         width: 100%;
+        text-align: center;
         text-align: center;
         margin-top: 180px;
         margin-bottom: 160px;
+        position: relative;
+        z-index: 1;
+        
     }
 
     .more {
@@ -125,9 +149,7 @@ h1 {
         font-size: 26px;
         background-color: #209A32;
         border-radius: 30px;
-        
         box-shadow: 0px 10px 5px black;
-        
     }
 
         .more:hover {
@@ -135,15 +157,25 @@ h1 {
         }
 
         .more:active {
-            box-shadow: inset 2px 2px 20px navy;
+            box-shadow: inset 2px 2px 20px black;
             height: 49px;
             width: 199px;
             font-size: 25.9px;
             color: burlywood;
             transform: translateY(10px);
         }
-    
 
+
+    .bottomFrame {
+        width: 100%;
+        height: 80vh;
+        /* border: 1px magenta solid; */
+        position: absolute;
+        bottom: 0px;
+        
+    }
+    
+    
 
 
 
@@ -166,10 +198,7 @@ h1 {
         .leftHalf {
             width: 60%;
             float: left;
-            
-            
         }
-     
 
             .top p:first-child {
                 position: relative;
@@ -207,8 +236,6 @@ h1 {
     #copyright {
         position: relative;
         top: 50px;
-      
-        
     }
 
         #copyright a {
