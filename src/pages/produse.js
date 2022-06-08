@@ -3,7 +3,7 @@ import { Navbar, Nav, Carousel } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import logo from '../images/blumenLogo.png'
-import '../style/home.css'
+
 import { RiHome2Fill } from 'react-icons/ri';
 import { AiOutlineMail } from 'react-icons/ai';
 import { BsTelephone } from 'react-icons/bs';
@@ -24,38 +24,101 @@ import plant6 from '../images/plant6.png';
 import plant7 from '../images/plant7.png';
 import plant8 from '../images/plant8.png';
 import plant9 from '../images/plant9.png';
+import { Link } from 'react-router-dom';
+import '../style/products.css'
+
+import { Pagination } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+
 
 
 function Products() {
 
+  const [activePg, setActive] = useState(1)
+  const [pages, setPages] = useState()
   
-  
-  const hotObj = [
-    
-    ['Planta 2', plant2],
-    ['Planta 3', plant3],
-    ['Planta 4', plant4],
-    ['Planta 5', plant5],
-    ['Planta 6', plant6],
-    ['Planta 7', plant7],
-    ['Planta 8', plant8],
-    ['Planta 9', plant9]
+  const db = [
+    ['Planta 2', plant2, 'arbust'],
+    ['Planta 3', plant3, 'conifere'],
+    ['Planta 4', plant4, 'foioase'],
+    ['Planta 5', plant5, 'butasi'],
+    ['Planta 6', plant6, 'cataratoare'],
+    ['Planta 7', plant7, 'aromatice'],
+    ['Planta 8', plant8, 'tufe'],
+    ['Planta 9', plant9, 'pomisori'],
+    ['Planta 10', plant2, 'arbust'],
+    ['Planta 11', plant3, 'conifere'],
+    ['Planta 12', plant4, 'foioase'],
+    ['Planta 13', plant5, 'butasi'],
+    ['Planta 14', plant6, 'cataratoare'],
+    ['Planta 15', plant7, 'aromatice'],
+    ['Planta 16', plant8, 'tufe'],
+    ['Planta 18', plant9, 'pomisori'],
+    ['Planta 2', plant2, 'arbust'],
+    ['Planta 3', plant3, 'conifere'],
+    ['Planta 4', plant4, 'foioase'],
+    ['Planta 5', plant5, 'butasi'],
+    ['Planta 6', plant6, 'cataratoare'],
+    ['Planta 7', plant7, 'aromatice'],
+    ['Planta 8', plant8, 'tufe'],
+    ['Planta 9', plant9, 'pomisori'],
+    ['Planta 2', plant2, 'arbust'],
+    ['Planta 3', plant3, 'conifere'],
+    ['Planta 4', plant4, 'foioase'],
+    ['Planta 5', plant5, 'butasi'],
+    ['Planta 6', plant6, 'cataratoare'],
+    ['Planta 7', plant7, 'aromatice'],
+    ['Planta 8', plant8, 'tufe'],
+    ['Planta 9', plant9, 'pomisori']
   ]
-  const whatsHot = () => {
-    return hotObj.map(x => {
-    return (
-    <div key={hotObj.indexOf(x)}>
-      <img className="displayItem" src={x[1]} /><p>{x[0]}</p>
-    </div>)}
-    )
+
+  const ListProducts = () => {
+    // There will be 8 items per page.
+
+    let selection = db.slice(0 + 8 * activePg, 12)
+    return selection.map(x => {
+      return (
+        <div key={db.indexOf(x)}>
+          <img src={x[1]} className='frame'></img>
+          <div className='description'>
+            <h3>
+            {x[0]}
+            </h3><hr/>
+            <h4>Categoria: {x[2]}</h4><hr />
+            <h5>Pret {Math.round(Math.random() * 100)} Lei</h5>
+          </div>
+        </div>
+      )
+    })
+  }
+  
+
+  let active = activePg;
+  let items = [];
+  let totalPg
+  if (db.length % 8 === 0) totalPg = db.length / 8;
+  else totalPg = db.length / 8 + 1;
+  for (let number = 1; number <= totalPg; number++) {
+    items.push(
+      <Pagination.Item key={number} active={number === active}>
+        {number}
+      </Pagination.Item>,
+    );
   }
 
+  const paginationBasic = () => {
+    return (
+      <div className='pagination'>
+        <Pagination>{items}</Pagination>
+      </div>
+    )
+  }
+  
+
+
+
   return (
-    // body has 4 main elements:
-    // 1.Navbar
-    // 2. Carousel
-    // 3. On Display
-    // 4. Footer
+    
     <div className="App">
       
       <Navbar collapseOnSelect className='navbar'
@@ -63,26 +126,25 @@ function Products() {
         <Container className='navContainer'>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto navItem">
-                <Nav.Link className='homeIcon' href="#home">
+            <Nav className="me-auto navItem">
+                <Link className='homeIcon' to="/">
                   <IconContext.Provider
                     value={{ color: 'rgb(50, 50, 50)',
-                     size: '30px' }}
+                      size: '30px' }}
                       >
                       <RiHome2Fill />
                   </IconContext.Provider>
-                </Nav.Link>
-                <Nav.Link href="#link">Produse</Nav.Link>
-                <Nav.Link href="#home">Plante la ghiveci</Nav.Link>
-                <Nav.Link href="#link">Decoratiuni si aranjamente florale</Nav.Link>
-                <Nav.Link href="#home">Productie proprie</Nav.Link>
-                <Nav.Link href="#link">Clienti</Nav.Link>
-                <Nav.Link href="#link">Contact / Impresii</Nav.Link>
+                </Link>
+                <Link className='links' to="/produse">Produse</Link>
+                <Link className='links' to="/">Plante la ghiveci</Link>
+                <Link className='links' to="#link">Decoratiuni si aranjamente florale</Link>
+                <Link className='links' to="#home">Productie proprie</Link>
+                <Link className='links' to="#link">Clienti</Link>
+                <Link className='links' to="#link">Contact / Impresii</Link>
               </Nav>
-            
           </Navbar.Collapse>
         </Container> 
-        <Navbar.Brand href="#home" className='navLogo'>
+        <Navbar.Brand href="/" className='navLogo'>
              <h3 id='logoName'><em>AR flora</em></h3>
           <img
                 src={logo}
@@ -96,23 +158,13 @@ function Products() {
       </Navbar>
 
       
-
+      
       <div className='onDisplay'>
-        <h1 id='displayTitle'>Produse Noi</h1>
-        <div className="grid-container">  
-          {whatsHot()}
-        </div>
-        <div className='moreHighlights'>
-          <button type='button' className='more'>mai multe...</button>
-        </div>
-     
-        <h1 id='displayTitle'>La Oferta</h1>
-        <div className="grid-container">  
-          {whatsHot()}
-        </div>
-        <div className='moreHighlights'>
-            <button type='button' className='more'>mai multe...</button>
-          </div>
+        <h1 id='displayTitle'>Produsele Noastre</h1>
+        {paginationBasic()}
+        <div className='catalogue'>
+          {ListProducts()}
+        </div>        
         <img src={bottom} className='bottomFrame'></img>
       </div>
 

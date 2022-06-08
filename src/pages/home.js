@@ -24,6 +24,7 @@ import plant6 from '../images/plant6.png';
 import plant7 from '../images/plant7.png';
 import plant8 from '../images/plant8.png';
 import plant9 from '../images/plant9.png';
+import { Link } from 'react-router-dom';
 
 
 function Home() {
@@ -45,7 +46,7 @@ function Home() {
     return hotObj.map(x => {
     return (
     <div key={hotObj.indexOf(x)}>
-      <img className="displayItem" src={x[1]} /><p>{x[0]}</p>
+      <img className="displayItem" src={x[1]} /><h3>{x[0]}</h3>
     </div>)}
     )
   }
@@ -63,26 +64,26 @@ function Home() {
         <Container className='navContainer'>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto navItem">
-                <Nav.Link className='homeIcon' href="#home">
-                  <IconContext.Provider
-                    value={{ color: 'rgb(50, 50, 50)',
-                     size: '30px' }}
-                      >
-                      <RiHome2Fill />
-                  </IconContext.Provider>
-                </Nav.Link>
-                <Nav.Link href="./produse.js">Produse</Nav.Link>
-                <Nav.Link href="#home">Plante la ghiveci</Nav.Link>
-                <Nav.Link href="#link">Decoratiuni si aranjamente florale</Nav.Link>
-                <Nav.Link href="#home">Productie proprie</Nav.Link>
-                <Nav.Link href="#link">Clienti</Nav.Link>
-                <Nav.Link href="#link">Contact / Impresii</Nav.Link>
-              </Nav>
+            <Nav className="me-auto navItem">
+              <Link className='homeIcon' to="/">
+                <IconContext.Provider
+                  value={{ color: 'rgb(50, 50, 50)',
+                    size: '30px' }}
+                    >
+                    <RiHome2Fill />
+                </IconContext.Provider>
+              </Link>
+              <Link className='links' to="./produse">Produse</Link>
+              <Link className='links' to="/">Plante la ghiveci</Link>
+              <Link className='links' to="#link">Decoratiuni si aranjamente florale</Link>
+              <Link className='links' to="#home">Productie proprie</Link>
+              <Link className='links' to="#link">Clienti</Link>
+              <Link className='links' to="#link">Contact / Impresii</Link>
+            </Nav>
             
           </Navbar.Collapse>
         </Container> 
-        <Navbar.Brand href="#home" className='navLogo'>
+        <Navbar.Brand to="/" className='navLogo'>
              <h3 id='logoName'><em>AR flora</em></h3>
           <img
                 src={logo}
@@ -148,7 +149,9 @@ function Home() {
           {whatsHot()}
         </div>
         <div className='moreHighlights'>
-          <button type='button' className='more'>mai multe...</button>
+          <Link to='/produse'>
+            <button type='button' className='more'>mai multe...</button>
+          </Link>
         </div>
      
         <h1 id='displayTitle'>La Oferta</h1>
@@ -156,8 +159,10 @@ function Home() {
           {whatsHot()}
         </div>
         <div className='moreHighlights'>
+          <Link to='/produse'>
             <button type='button' className='more'>mai multe...</button>
-          </div>
+          </Link> 
+        </div>
         <img src={bottom} className='bottomFrame'></img>
       </div>
 
