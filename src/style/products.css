@@ -67,23 +67,23 @@
                 bottom: -15px;
             }
     
-    .hanging {
+    /* .hanging {
         height: 200px;
         width: 130px;
         position: absolute;
         right: 92px;
         top: 88px;
         
-    }
+    } */
 
 
 .onDisplay {
     height: 2800px;
     margin-top: 0px;
-    background-image: url('../images/plantCurtain.png');
+    /* background-image: url('../images/plantCurtain.png');
     background-attachment: fixed;
     background-repeat: repeat-x;
-    background-size: cover;
+    background-size: cover; */
     position: relative;
 }
 
@@ -100,7 +100,7 @@
 
     .pagination {
         position: absolute;
-        right: 110px;
+        right: 10px;
         top: 100px;
     }
 
@@ -119,37 +119,58 @@
         height: 0px;
         border: none;
         border-top: 4px solid darkolivegreen;
+        margin-bottom: 0;
+        
     }
 
-        .frame {
+        .productPic {
             height: 500px;
             width: 400px;
             outline: inset 10px darkolivegreen;
+            /* opacity: 0.5; */
+            position: relative;
+            z-index: +1;
+            transition: 0.3s;
+            border-radius: 5%;
+            margin: 10px;
             
+        }
+
+        .productPic:hover {
+            filter: grayscale(50%)
         }
 
         .description {
             background-color: blanchedalmond;
             border: 5px dashed rgb(131, 98, 9);
-            margin-top: 5px;
-            margin-bottom: 30px;
+            margin-top: -95px;
+            margin-bottom: 160px;
+            padding-bottom: 20px;
+            position: relative;
+            top: 0px;
+            transition: 0.8s;
+            z-index: 0;
+            border-radius: 3%;
+            width: 395px;
+            left: 14px;
         }
 
-        .description h3, h4 {
-            padding-left: 10px;
-            position: relative;
-            bottom: -14px;
-           
+        .description:hover {
+            top: 90px;
         }
 
         .description h5 {
             position: relative;
+            top: 15px;
             left: 10px;
         }
 
+        .description h3, h4 {
+            margin-left: 10px;
+            position: relative;
+            bottom: -14px;
+        }
 
-    
-    
     .bottomFrame {
         width: 100%;
         height: 80vh;
@@ -158,10 +179,6 @@
         bottom: 0px;
         
     }
-    
-    
-
-
 
 .footer {
     border-top: 2px magenta solid;
@@ -226,3 +243,61 @@
             color: bisque;
         }
 
+
+
+@media only screen and ( max-width: 1830px ) {
+    .productPic {
+        width: 300px;
+        height: 375px;
+    }
+
+    .description {
+        width: 295px;
+    }
+}
+    
+
+@media only screen and ( max-width: 768px ) {
+    .productPic {
+        width: 200px;
+        height: 250px;
+        /* opacity: 0.2; */
+    }
+
+    .description {
+        width: 195px;
+        
+    }
+
+    .description h3, h4, h5 {
+        font-size: 14px;
+         
+        
+    }
+}
+
+@media only screen and ( max-width: 320px ) {
+
+    .catalogue {
+        padding: 2px;
+    }
+
+    .productPic {
+        width: 100px;
+        height: 125px;
+        /* opacity: 0.2; */
+    }
+
+    .description {
+        width: 95px;
+    }
+
+    .description h3, h4, h5 {
+        font-size: 14px;
+    }
+
+    .pagination {
+        top: 60px;
+        
+    }
+}

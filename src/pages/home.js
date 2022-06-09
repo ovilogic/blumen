@@ -93,7 +93,7 @@ function Home() {
                 className="d-inline-block align-bottom"
               />{'        '}
             </Navbar.Brand> 
-        <img src={hanging} className='hanging'></img>
+        {/* <img src={hanging} className='hanging'></img> */}
       </Navbar>
 
       <Carousel className='carousel'>

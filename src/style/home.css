@@ -95,10 +95,10 @@ h1 {
 .onDisplay {
     height: 2800px;
     margin-top: 0px;
-    background-image: url('../images/plantCurtain.png');
+    /* background-image: url('../images/plantCurtain.png');
     background-attachment: fixed;
     background-repeat: repeat-x;
-    background-size: cover;
+    background-size: cover; */
     position: relative;
 }
 
