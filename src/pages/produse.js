@@ -91,8 +91,11 @@ function Products() {
     return selection.map(x => {
       return (
         <div key={db.indexOf(x)}>
-          <img src={x[1]} className='productPic'>
-          </img>          
+          
+           <Link to={'/' + x[0].replace(/\s/g, '')} >
+           <img src={x[1]} className='productPic'></img>   
+           </Link>
+               
          
           <div className='description'>
             <h5>
