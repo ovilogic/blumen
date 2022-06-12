@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+.productDisplay {
+    height: auto;
+    min-height: 85vh;
+    background-color: lightgray;
+
+    width: 100%;
+    position: relative;
+    
+}
+
+.picture {
+    max-height: 80vh;
+    max-width: 50vw;
+
+ 
+}
+
+.infoBox {
+    display: inline-block;
+    position: absolute;
+    top: 40px;
+
+}
+

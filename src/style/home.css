@@ -5,78 +5,7 @@
     
 }
 
-#logoName {
-    color: #209A32;
-    display: inline;
-    font-family:  'Franklin Gothic Medium', Arial, sans-serif, sans-serif;
-    font-weight: bold;
-    font-size: 48px;
-    
-}
 
-.navbar {
-    /* border: 2px dotted aqua; */
-    padding-right: 0px;
-    height: 120px;
-    padding-bottom: 0%;
-}
-
-    .navContainer {
-        /* border: magenta 2px solid; */
-        padding-left: 0;
-        margin-left: 5%;
-        margin-bottom: -2%;
-        
-    }
-        /* .navContainer {
-            width: 50vw;
-        } */
-
-        .navItem {
-            font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-            font-weight: bold;
-            
-            position: relative;
-            top: 13px;
-            /* border: 1px solid yellow; */
-            left: 0;
-            
-        }
-
-        .links {
-            text-decoration: none;
-            color: rgb(83, 83, 83);
-            font-size: 18px;
-            margin-right: 10px;
-            position: relative;
-            bottom: -10px;
-
-        }
-
-        .homeIcon {
-            margin-right: 20px;
-        }
-
-        .navLogo {
-            margin-right: 40px;
-            /* border: lime 1px dotted; */
-            
-        }
-
-            #logoName {
-                
-                position: relative;
-                bottom: -15px;
-            }
-    
-    .hanging {
-        height: 200px;
-        width: 130px;
-        position: absolute;
-        right: 92px;
-        top: 88px;
-        
-    }
 
 h1 {
     color: blanchedalmond
@@ -92,7 +21,7 @@ h1 {
         max-height: 90vh;
     }
 
-.onDisplay {
+.homeDisplay {
     height: 2800px;
     margin-top: 0px;
     /* background-image: url('../images/plantCurtain.png');
@@ -132,7 +61,7 @@ h1 {
         width: 290px;
         height: 400px;
         color: black;
-        outline: inset 7px darkolivegreen;
+        outline: inset 7px #209A32;
     }
 
         .displayItem + h3 {

@@ -1,19 +1,12 @@
 
-import { Navbar, Nav, Carousel } from 'react-bootstrap';
-import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import logo from '../images/blumenLogo.png'
 
-import { RiHome2Fill } from 'react-icons/ri';
 import { AiOutlineMail } from 'react-icons/ai';
 import { BsTelephone } from 'react-icons/bs';
 import { FaMobileAlt } from 'react-icons/fa';
 import { BiMap } from 'react-icons/bi';
 import { IconContext} from "react-icons";
-import slide1 from '../images/WhatsApp Image 2022-06-03 at 1.29.38 PM.jpeg';
-import slide2 from '../images/Alex 2022-06-02 at 8.41.28 PM.jpeg';
-import slide3 from '../images/WhatsApp Image 2022-06-03 at 1.56.16 PM.jpeg';
-import hanging from '../images/hanging.png'
+
 import bottom from '../images/bottom.png'
 import plant1 from '../images/plant1.png';
 import plant2 from '../images/plant2.png';
@@ -28,14 +21,17 @@ import { Link } from 'react-router-dom';
 import '../style/products.css'
 
 import { Pagination } from 'react-bootstrap';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+
+import NavPanel from '../navPanel';
+import FooterPanel from '../footerPanel';
 
 
 
 function Products() {
 
   const [activePg, setActive] = useState(1)
-  const [pages, setPages] = useState()
+  
   
   const db = [
     ['Planta 1', plant1, 'flori'],
@@ -93,7 +89,7 @@ function Products() {
         <div key={db.indexOf(x)}>
           
            <Link to={'/' + x[0].replace(/\s/g, '')} >
-           <img src={x[1]} className='productPic'></img>   
+            <img src={x[1]} className='productPic'></img>   
            </Link>
                
          
@@ -122,7 +118,7 @@ function Products() {
         if (number != active) {
         setActive(Number(e.target.text))}
         }}
-      key={number} active={number === active}>
+      key={number} active={number === active} className='pagButton'>
         {number}
       </Pagination.Item>,
     );
@@ -135,178 +131,34 @@ function Products() {
       </div>
     )
   }
-  
 
+ 
 
 
   return (
     
     <div className="App">
-      
-      <Navbar collapseOnSelect className='navbar'
-        expand='lg' bg="light" variant='light' sticky='top'>
-        <Container className='navContainer'>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto navItem">
-                <Link className='homeIcon' to="/">
-                  <IconContext.Provider
-                    value={{ color: 'rgb(50, 50, 50)',
-                      size: '30px' }}
-                      >
-                      <RiHome2Fill />
-                  </IconContext.Provider>
-                </Link>
-                <Link className='links' to="/produse">Produse</Link>
-                <Link className='links' to="/">Plante la ghiveci</Link>
-                <Link className='links' to="#link">Decoratiuni si aranjamente florale</Link>
-                <Link className='links' to="#home">Productie proprie</Link>
-                <Link className='links' to="#link">Clienti</Link>
-                <Link className='links' to="#link">Contact / Impresii</Link>
-              </Nav>
-          </Navbar.Collapse>
-        </Container> 
-        <Navbar.Brand href="/" className='navLogo'>
-             <h3 id='logoName'><em>AR flora</em></h3>
-          <img
-                src={logo}
-                alt="brand logo"
-                style={{ width: "60px",
-                  height: "50px"}}
-                className="d-inline-block align-bottom"
-              />{'        '}
-            </Navbar.Brand> 
-        {/* <img src={hanging} className='hanging'></img> */}
-      </Navbar>
-
-      
+      <NavPanel />
       
       <div className='onDisplay'>
         <h1 id='displayTitle'>Produsele Noastre</h1>
         {paginationBasic()}
+
+        {/* Side navigation bar */}
+        <div class="sidenav">
+          <a href="#about">flori</a>
+          <a href="#services">butasi</a>
+          <a href="#clients">arbusti</a>
+          <a href="#contact">accesorii</a>
+        </div>
+
         <div className='catalogue'>
           {ProductParser()}
         </div>        
         <img src={bottom} className='bottomFrame'></img>
       </div>
 
-      {/* Footer divided in two:
-      1. .businessInfo: All the paragraphs and lists except for Copyright.
-      2. .copyright. */}
-      <div className="footer">
-        <div className='businessInfo'>
-          <div className='leftHalf'>
-            <div className='top'>
-              <p>FLORARIE EN-GROS SI DECORATIUNI EN-GROS</p>
-              <hr></hr>
-              <p>În calitate de angrosist de florărie și angro de decorațiuni, operăm o afacere globală de import pentru furnituri pentru decorațiuni și flori, cadouri, accesorii pentru casă și articole decorative de sezon. Vă transmitem direct condițiile noastre favorabile de cumpărare. În plus, oferim în permanență prețuri mici la rechizite pentru florărie, prețuri speciale săptămânale la articolele actuale de florărie și decor precum și reduceri și promoții. Prin magazinul nostru online puteți cumpăra online gama noastră de rechizite pentru florărie și accesorii pentru casă în toată Europa. Oferim florarilor și decoratorilor inspirație pentru florăria sezonieră, decorațiuni pentru vitrine și multe altele.</p>
-            </div>
-            <div className='bottom'>
-              <p>COMERT CU RIDICATA CU FLORI SI FLORI TAIATE</p>
-              <hr></hr>
-              <p>În calitate de angrosist de flori, oferim o selecție uriașă de plante în ghivece, plante mediteraneene, plante perene și plante container, plante mari și multe altele. Majoritatea plantelor noastre de așternut și de balcon provin din pepinierele noastre. În piețele noastre de flori angro și prin serviciul nostru de livrare, puteți obține plante sezoniere, plante de balcon, plante de așternut și pepinieră, cum ar fi primule, panseluțe, pelargonii, poinsettias, plante perene și arbori standard direct de la pepinierele noastre din Bavaria, Austria și România.</p>
-            </div>
-            
-          </div>
-
-          <div className='rightHalf'>
-            <p>CONTACTATI-NE</p>
-            <hr></hr>
-            <ul>
-              <li><a href='mailto:info@arflora.ro'>
-                <IconContext.Provider value={{ size: '22px'}}>
-                  <AiOutlineMail />
-                </IconContext.Provider>
-                
-              </a> info@arflora.ro
-              </li>
-              <li> <IconContext.Provider value={{ size: '22px'}}>
-                <BsTelephone />
-              </IconContext.Provider> +40/257/381870</li>
-            
-              <li> <IconContext.Provider value={{ size: '22px'}}>
-                <FaMobileAlt />
-              </IconContext.Provider> +40722349066 </li>
-              <li> <IconContext.Provider value={{ size: '22px'}}>
-                <BiMap />
-              </IconContext.Provider> Sinleani, nr. 359, jud. Arad</li>
-
-              <hr/>
-
-              <li>
-                <a href='https://www.blumenzentrale.de'>
-                  Bayerische Blumen Zentrale
-                </a>{' '}
-                <a href='mailto:info@blumenzentrale.de'>
-                <IconContext.Provider value={{ size: '22px'}}>
-                  <AiOutlineMail />
-                </IconContext.Provider>
-                </a> 
-              </li>
-              
-              <li>
-                <a href='http://blumenzentrale.de'>
-                Blumen Zentrale Lindau
-              </a>{' '}
-                <a href='mailto:lindau@blumenzentrale.de'>
-                <IconContext.Provider value={{ size: '22px'}}>
-                  <AiOutlineMail />
-                </IconContext.Provider>
-                </a> 
-              </li>
-
-              <li><a href='http://blumenzentrale.de'>
-                Blumen Zentrale Straubing
-              </a>{' '}
-                <a href='mailto:straubing@blumenzentrale.de'>
-                <IconContext.Provider value={{ size: '22px'}}>
-                  <AiOutlineMail />
-                </IconContext.Provider>
-                </a> 
-              </li>
-
-              <li><a href='http://www.salzachblume.at'>
-                Slazachblume
-              </a>{' '}
-                <a href='mailto:info@salzachblume.at'>
-                <IconContext.Provider value={{ size: '22px'}}>
-                  <AiOutlineMail />
-                </IconContext.Provider>
-                </a> 
-              </li>
-
-              <li><a href='http://donaublume.com'>
-                Donaublume
-              </a> {' '}
-                <a href='mailto:info@donaublume.com'>
-                <IconContext.Provider value={{ size: '22px'}}>
-                  <AiOutlineMail />
-                </IconContext.Provider>
-                </a> 
-              </li>
-
-              <li><a href='http://www.dunavirag.hu'>
-                Dunavirag Centrum
-              </a> {' '}
-                <a href='mailto:info@dunavirag.hu'>
-                <IconContext.Provider value={{ size: '22px'}}>
-                  <AiOutlineMail />
-                </IconContext.Provider>
-                </a> 
-              </li>
-            </ul>
-          </div>
-        {/*End of businessInfo.  */}
-        </div>
-        {/* copyright is a div so it will naturally go under. */}
-        <div id='copyright'>
-          <p>Copyright 2022 © AR flora</p>
-          <a href="https://www.freepik.com/vectors/hand-drawing">Hand drawing vector created by rawpixel.com - www.freepik.com</a><br/>
-          <a href='https://www.freepik.com/vectors/flower-pot'>Flower pot vector created by pch.vector - www.freepik.com</a><br/>          <a href="https://www.freepik.com/vectors/foliage-background">Foliage background vector created by rawpixel.com - www.freepik.com</a>
-
-        </div>
-      {/* End of footer. */}  
-      </div>
+      <FooterPanel />
     {/* End of wrapper div.*/}
     </div>
     // End of return.

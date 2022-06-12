@@ -61,24 +61,11 @@
             /* border: lime 1px dotted; */
         }
 
-            #logoName {
-                
-                position: relative;
-                bottom: -15px;
-            }
-    
-    /* .hanging {
-        height: 200px;
-        width: 130px;
-        position: absolute;
-        right: 92px;
-        top: 88px;
         
-    } */
 
 
 .onDisplay {
-    height: 2800px;
+    height: auto;
     margin-top: 0px;
     /* background-image: url('../images/plantCurtain.png');
     background-attachment: fixed;
@@ -87,24 +74,60 @@
     position: relative;
 }
 
+    /* Side navigation: */
+    .sidenav {
+        width: 130px;
+        margin-top: 30vh;
+        position: fixed;
+        z-index: 1;
+       
+        top: 20px;
+        left: 10px;
+        background: #209A32;
+        overflow-x: hidden;
+        padding: 8px 0;
+        box-shadow: 0px 10px 5px black;
+        border-radius: 10%;
+        border: 2px inset black;
+      }
+      
+      .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        display: block;
+        
+      }
+      
+      .sidenav a:hover {
+        color: bisque;
+      }
+
+
     #displayTitle {
         /* border: peru 2px dashed; */
-        color: black;
+        color: #413e40;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         font-weight: bold;
         position: relative;
-        top: 10vh;
+        top: 8vh;
         text-align: center;
-        box-shadow: 0px 0px 26px black;
+        box-shadow: 0px 10px 5px black;
+        background-color: #209A32;
     }
 
     .pagination {
         position: absolute;
         right: 10px;
         top: 100px;
+       
     }
 
     .catalogue {
+        /* border: mediumseagreen dotted 2px; */
+        margin-left: 8vw;
+
         display: flex;
         padding: 40px;
         flex-wrap: wrap;
@@ -114,6 +137,21 @@
         position: relative;
         z-index: 1;
     }
+
+        .pagination > li > a {
+            color: white;
+            background-color: bisque;
+           
+        }
+
+        .pagination > li > a:hover {
+            color: #209A32;
+        }
+
+       =
+ 
+  
+       
 
     .catalogue hr {
         height: 0px;
@@ -126,7 +164,7 @@
         .productPic {
             height: 500px;
             width: 400px;
-            outline: inset 10px darkolivegreen;
+            outline: inset 10px #209A32;
             /* opacity: 0.5; */
             position: relative;
             z-index: +1;
@@ -143,11 +181,11 @@
         .description {
             background-color: blanchedalmond;
             border: 5px dashed rgb(131, 98, 9);
-            margin-top: -95px;
+            margin-top: -98px;
             margin-bottom: 160px;
             padding-bottom: 20px;
             position: relative;
-            top: 0px;
+            top: -25px;
             transition: 0.8s;
             z-index: 0;
             border-radius: 3%;
@@ -187,6 +225,8 @@
     overflow: auto;
     color: bisque;
     padding: 50px;
+    position: relative;
+    z-index: 2;
 
 }
 
@@ -297,7 +337,6 @@
     }
 
     .pagination {
-        top: 60px;
-        
+        top: 60px;  
     }
 }

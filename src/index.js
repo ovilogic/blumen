@@ -3,23 +3,10 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/home.js';
 import Products from './pages/produse.js';
-
 import NoPage from './pages/NoPage';
 
-
-import { Navbar, Nav, Carousel } from 'react-bootstrap';
-import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import logo from './images/blumenLogo.png'
 
-import { RiHome2Fill } from 'react-icons/ri';
-import { AiOutlineMail } from 'react-icons/ai';
-import { BsTelephone } from 'react-icons/bs';
-import { FaMobileAlt } from 'react-icons/fa';
-import { BiMap } from 'react-icons/bi';
-import { IconContext} from "react-icons";
-
-import bottom from './images/bottom.png'
 import plant1 from './images/plant1.png';
 import plant2 from './images/plant2.png';
 import plant3 from './images/plant3.png';
@@ -29,9 +16,16 @@ import plant6 from './images/plant6.png';
 import plant7 from './images/plant7.png';
 import plant8 from './images/plant8.png';
 import plant9 from './images/plant9.png';
-import { Link } from 'react-router-dom';
-import './style/products.css'
 
+
+
+import NavPanel from './navPanel.js';
+import FooterPanel from './footerPanel.js';
+
+import './style/index.css'
+
+import Card from 'react-bootstrap/Card'
+import Contact from './pages/contact.js';
 
 
 
@@ -83,164 +77,32 @@ export default function App() {
         <Route key={db.indexOf(x)}
          path={'/' + x[0].replace(/\s/g, '')} element={<div>
 
-          <Navbar collapseOnSelect className='navbar'
-            expand='lg' bg="light" variant='light' sticky='top'>
-            <Container className='navContainer'>
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
-              <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto navItem">
-                    <Link className='homeIcon' to="/">
-                      <IconContext.Provider
-                        value={{ color: 'rgb(50, 50, 50)',
-                          size: '30px' }}
-                          >
-                          <RiHome2Fill />
-                      </IconContext.Provider>
-                    </Link>
-                    <Link className='links' to="/produse">Produse</Link>
-                    <Link className='links' to="/">Plante la ghiveci</Link>
-                    <Link className='links' to="#link">Decoratiuni si aranjamente florale</Link>
-                    <Link className='links' to="#home">Productie proprie</Link>
-                    <Link className='links' to="#link">Clienti</Link>
-                    <Link className='links' to="#link">Contact / Impresii</Link>
-                  </Nav>
-              </Navbar.Collapse>
-            </Container> 
-            <Navbar.Brand href="/" className='navLogo'>
-                <h3 id='logoName'><em>AR flora</em></h3>
-              <img
-                    src={logo}
-                    alt="brand logo"
-                    style={{ width: "60px",
-                      height: "50px"}}
-                    className="d-inline-block align-bottom"
-                  />{'        '}
-                </Navbar.Brand> 
-            {/* <img src={hanging} className='hanging'></img> */}
-          </Navbar>
+          <NavPanel />
 
-          <div className='onDisplay'>
-            <h1 style={{color: 'black'}} >{x[0]}</h1>
-            <img src={x[1]}></img>
+          <div className='productDisplay'>
+            
+            <img className='picture' src={x[1]}></img>     
+            <div className='infoBox'>
+              <Card className='card' bg='light' style={{ maxWidth: '45vw' }}>
+                <Card.Body>
+                  <Card.Title>{x[0]}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">{x[2]}</Card.Subtitle>
+                  <Card.Text>
+                    Magnolia stellata (Sieb. Et Zucc.) Maxim. , (Magnolie), este o specie de plantă care crește sub formă de arbore cu lujerii păroși sau arbust înalt de cca. 3,5 m. Face parte din genul Magnolia L., familia Magnoliaceae.
+                    Frunzele sunt invers-ovate, și au cca. 8 cm lungime.
+                    Florile sunt albe, mirositoare, duble, cu numeroase petale oblong-liniare ce se deschid în formă de stea și apar primăvara devreme, înainte de înfrunzire.
+                    Fructul este compus. Se înmulțește prin semințe și pe cale asexuată prin marcotaj sau prin altoire, în soluri fertile. Se plantează în parcuri și grădini, iar ramurile se pot folosi și în aranjamente florale.
+                  </Card.Text>
+                  <Card.Subtitle className="mb-2 text-muted">Pret {Math.round(Math.random() * 100)} Lei</Card.Subtitle>
+                  {/* <Card.Link href="#">Card Link</Card.Link>
+                  <Card.Link href="#">Another Link</Card.Link> */}
+                </Card.Body>
+              </Card>
+            </div>
+            
           </div>
 
-          {/* Footer divided in two:
-          1. .businessInfo: All the paragraphs and lists except for Copyright.
-          2. .copyright. */}
-          <div className="footer">
-            <div className='businessInfo'>
-              <div className='leftHalf'>
-                <div className='top'>
-                  <p>FLORARIE EN-GROS SI DECORATIUNI EN-GROS</p>
-                  <hr></hr>
-                  <p>În calitate de angrosist de florărie și angro de decorațiuni, operăm o afacere globală de import pentru furnituri pentru decorațiuni și flori, cadouri, accesorii pentru casă și articole decorative de sezon. Vă transmitem direct condițiile noastre favorabile de cumpărare. În plus, oferim în permanență prețuri mici la rechizite pentru florărie, prețuri speciale săptămânale la articolele actuale de florărie și decor precum și reduceri și promoții. Prin magazinul nostru online puteți cumpăra online gama noastră de rechizite pentru florărie și accesorii pentru casă în toată Europa. Oferim florarilor și decoratorilor inspirație pentru florăria sezonieră, decorațiuni pentru vitrine și multe altele.</p>
-                </div>
-                <div className='bottom'>
-                  <p>COMERT CU RIDICATA CU FLORI SI FLORI TAIATE</p>
-                  <hr></hr>
-                  <p>În calitate de angrosist de flori, oferim o selecție uriașă de plante în ghivece, plante mediteraneene, plante perene și plante container, plante mari și multe altele. Majoritatea plantelor noastre de așternut și de balcon provin din pepinierele noastre. În piețele noastre de flori angro și prin serviciul nostru de livrare, puteți obține plante sezoniere, plante de balcon, plante de așternut și pepinieră, cum ar fi primule, panseluțe, pelargonii, poinsettias, plante perene și arbori standard direct de la pepinierele noastre din Bavaria, Austria și România.</p>
-                </div>
-                
-              </div>
-
-              <div className='rightHalf'>
-                <p>CONTACTATI-NE</p>
-                <hr></hr>
-                <ul>
-                  <li><a href='mailto:info@arflora.ro'>
-                    <IconContext.Provider value={{ size: '22px'}}>
-                      <AiOutlineMail />
-                    </IconContext.Provider>
-                    
-                  </a> info@arflora.ro
-                  </li>
-                  <li> <IconContext.Provider value={{ size: '22px'}}>
-                    <BsTelephone />
-                  </IconContext.Provider> +40/257/381870</li>
-                
-                  <li> <IconContext.Provider value={{ size: '22px'}}>
-                    <FaMobileAlt />
-                  </IconContext.Provider> +40722349066 </li>
-                  <li> <IconContext.Provider value={{ size: '22px'}}>
-                    <BiMap />
-                  </IconContext.Provider> Sinleani, nr. 359, jud. Arad</li>
-
-                  <hr/>
-
-                  <li>
-                    <a href='https://www.blumenzentrale.de'>
-                      Bayerische Blumen Zentrale
-                    </a>{' '}
-                    <a href='mailto:info@blumenzentrale.de'>
-                    <IconContext.Provider value={{ size: '22px'}}>
-                      <AiOutlineMail />
-                    </IconContext.Provider>
-                    </a> 
-                  </li>
-                  
-                  <li>
-                    <a href='http://blumenzentrale.de'>
-                    Blumen Zentrale Lindau
-                  </a>{' '}
-                    <a href='mailto:lindau@blumenzentrale.de'>
-                    <IconContext.Provider value={{ size: '22px'}}>
-                      <AiOutlineMail />
-                    </IconContext.Provider>
-                    </a> 
-                  </li>
-
-                  <li><a href='http://blumenzentrale.de'>
-                    Blumen Zentrale Straubing
-                  </a>{' '}
-                    <a href='mailto:straubing@blumenzentrale.de'>
-                    <IconContext.Provider value={{ size: '22px'}}>
-                      <AiOutlineMail />
-                    </IconContext.Provider>
-                    </a> 
-                  </li>
-
-                  <li><a href='http://www.salzachblume.at'>
-                    Slazachblume
-                  </a>{' '}
-                    <a href='mailto:info@salzachblume.at'>
-                    <IconContext.Provider value={{ size: '22px'}}>
-                      <AiOutlineMail />
-                    </IconContext.Provider>
-                    </a> 
-                  </li>
-
-                  <li><a href='http://donaublume.com'>
-                    Donaublume
-                  </a> {' '}
-                    <a href='mailto:info@donaublume.com'>
-                    <IconContext.Provider value={{ size: '22px'}}>
-                      <AiOutlineMail />
-                    </IconContext.Provider>
-                    </a> 
-                  </li>
-
-                  <li><a href='http://www.dunavirag.hu'>
-                    Dunavirag Centrum
-                  </a> {' '}
-                    <a href='mailto:info@dunavirag.hu'>
-                    <IconContext.Provider value={{ size: '22px'}}>
-                      <AiOutlineMail />
-                    </IconContext.Provider>
-                    </a> 
-                  </li>
-                </ul>
-              </div>
-            {/*End of businessInfo.  */}
-            </div>
-            {/* copyright is a div so it will naturally go under. */}
-            <div id='copyright'>
-              <p>Copyright 2022 © AR flora</p>
-              <a href="https://www.freepik.com/vectors/hand-drawing">Hand drawing vector created by rawpixel.com - www.freepik.com</a><br/>
-              <a href='https://www.freepik.com/vectors/flower-pot'>Flower pot vector created by pch.vector - www.freepik.com</a><br/>          <a href="https://www.freepik.com/vectors/foliage-background">Foliage background vector created by rawpixel.com - www.freepik.com</a>
-
-            </div>
-          {/* End of footer. */}  
-          </div>
+          <FooterPanel />
 
     
         </div>} />
@@ -256,7 +118,9 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path='/produse' element={<Products />}></Route>  
             {ProductPage()}
+          <Route path='/contact' element={<Contact />}></Route>
           <Route path="*" element={<NoPage />} />
+
         
       </Routes>
     </BrowserRouter>
