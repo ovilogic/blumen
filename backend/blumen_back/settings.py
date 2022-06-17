@@ -31,6 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # My Apps:
+    'engine_room',
+
+    # Default Apps:
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
