@@ -11,10 +11,9 @@ from .serializers import MesajSerializer
 
 
 class MesajView(viewsets.ModelViewSet):
-    serializer_class = MesajSerializer
-    def get_queryset(self):
-      queryset = Mesaj.objects.all()
-      return queryset
+  serializer_class = MesajSerializer
+  queryset = Mesaj.objects.all()
+  
 
 # the default view, the one for a '' request
 def store(request):
