@@ -7,4 +7,4 @@ from .models import Mesaj
 class MesajSerializer(serializers.ModelSerializer):
     class Meta:
         model = Mesaj
-        fields = ['prenume', 'nume', 'tara', 'subiect']
+        fields = ['id', 'prenume', 'nume', 'tara', 'subiect']

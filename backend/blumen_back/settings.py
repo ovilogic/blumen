@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # My Apps:
     'engine_room',
     'rest_framework',
+    'corsheaders',
 
     # Default Apps:
     'django.contrib.admin',
@@ -45,6 +46,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -53,6 +56,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# Django-cors-headers is an HTTP-header-based that allows a server to indicate any other origins to your Django appli-
+# cation: Cross-Origin Resource Sharing (CORS).
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000'
+]
+
 
 ROOT_URLCONF = 'blumen_back.urls'
 
