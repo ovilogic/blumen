@@ -4,65 +4,11 @@
     /* border: 1px dashed fuchsia; */
 }
 
-#logoName {
-    color: #209A32;
-    display: inline;
-    font-family:  'Franklin Gothic Medium', Arial, sans-serif, sans-serif;
-    font-weight: bold;
-    font-size: 48px;
-}
 
-.navbar {
-    /* border: 2px dotted aqua; */
-    padding-right: 0px;
-    height: 120px;
-    padding-bottom: 0%;
-}
-
-    .navContainer {
-        /* border: magenta 2px solid; */
-        padding-left: 0;
-        margin-left: 5%;
-        margin-bottom: -2%;
-    }
-        /* .navContainer {
-            width: 50vw;
-        } */
-
-        .navItem {
-            font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-            font-weight: bold;
-            
-            position: relative;
-            top: 13px;
-            /* border: 1px solid yellow; */
-            left: 0;
-            
-        }
-
-        .links {
-            text-decoration: none;
-            color: rgb(83, 83, 83);
-            font-size: 18px;
-            margin-right: 10px;
-            position: relative;
-            bottom: 20px;
-
-        }
-
-        .homeIcon {
-            margin-right: 20px;
-            position: relative;
-            bottom: 20px
-        }
-
-        .navLogo {
-            margin-right: 40px;
-            /* border: lime 1px dotted; */
-        }
-
+    
         
 
+     
 
 .onDisplay {
     height: auto;

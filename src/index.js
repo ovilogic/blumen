@@ -24,7 +24,8 @@ import FooterPanel from './footerPanel.js';
 
 import './style/index.css'
 
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
+import Clients from './pages/clienti.js';
 import Contact from './pages/contact.js';
 
 
@@ -118,6 +119,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path='/produse' element={<Products />}></Route>  
             {ProductPage()}
+          <Route path='/clienti' element={<Clients />}></Route>
           <Route path='/contact' element={<Contact />}></Route>
           <Route path="*" element={<NoPage />} />
 

@@ -6,9 +6,9 @@ import '../style/home.css'
 import slide1 from '../images/pretty-smiling-lady-gardener-with-redhead-curly-hair-standing-apron-holding-big-garden-scissors-while-happily-looking-camera-outdoors.jpg';
 import slide2 from '../images/female-gardener-pruning-plants-flowerpots-outdoors.jpg';
 import slide3 from '../images/WhatsApp Image 2022-06-03 at 1.56.16 PM.jpeg';
-import hanging from '../images/hanging.png'
+
 import bottom from '../images/bottom.png'
-import plant1 from '../images/midDivider.png';
+
 import plant2 from '../images/plant2.png';
 import plant3 from '../images/plant3.png';
 import plant4 from '../images/plant4.png';

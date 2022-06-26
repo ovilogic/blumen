@@ -13,11 +13,11 @@ import './style/navPanel.css'
 const NavPanel = () => {
     return ( 
         <Navbar collapseOnSelect className='navbar'
-            expand='lg' bg="light" variant='light' sticky='top'>
-            <Container className='navContainer'>
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
-              <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto navItem">
+            expand='lg' bg="light" variant='light' >
+            <Container className='navContainer' >
+              <Navbar.Toggle  />
+              <Navbar.Collapse >
+                <Nav className="me-auto navItem bg-light">
                     <Link className='homeIcon' to="/">
                       <IconContext.Provider
                         value={{ color: '#209A32',
@@ -30,7 +30,7 @@ const NavPanel = () => {
                     <Link className='links' to="/">Plante la ghiveci</Link>
                     <Link className='links' to="#link">Decoratiuni si aranjamente florale</Link>
                     <Link className='links' to="#home">Productie proprie</Link>
-                    <Link className='links' to="#link">Clienti</Link>
+                    <Link className='links' to="/clienti">Clienti</Link>
                     <Link className='links' to="/contact">Contact / Impresii</Link>
                   </Nav>
               </Navbar.Collapse>

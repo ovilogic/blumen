@@ -27,18 +27,15 @@
         margin-bottom: -2%;
         /* border: #209A32 1px solid; */
     }
-       
 
         .navItem {
             font-family: 'Open Sans', Arial, Helvetica, sans-serif;
             font-weight: bold;
-            
             position: relative;
             top: 13px;
-            /* border: 1px solid yellow; */
-            left: 0;
-            /* border: #209A32 1px solid; */
-            
+            z-index: 3;
+            width: 60vw;
+            /* border: 1px solid yellow; */            
         }
 
         .links {
@@ -46,8 +43,10 @@
             color: rgb(83, 83, 83);
             font-size: 18px;
             margin-right: 10px;
+            padding-left: 10px;
             position: relative;
             bottom: 12px;
+            
         }
 
         .links:active {
@@ -59,11 +58,17 @@
         }
 
         .homeIcon {
+            margin-left: 20px;
             margin-right: 20px;
+            position: relative;
+            bottom: 10px;
         }
 
         .navLogo {
             margin-right: 40px;
+            position: absolute;
+            right: 0;
+            z-index: 2;
             /* border: lime 1px dotted; */
             
         }
@@ -73,3 +78,4 @@
                 position: relative;
                 bottom: -15px;
             }
+
