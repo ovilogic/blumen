@@ -1,4 +1,3 @@
-
 from django.db import models
 
 
@@ -6,8 +5,9 @@ class Mesaj(models.Model):
     nume = models.CharField(max_length=250)
     prenume = models.CharField(max_length=250)
     austria = 'Au'
-    germany = 'Ge'
+    germany = 'De'
     romania = 'Ro'
+    ungaria = 'Hu'
 
     COUNTRY_CHOICES = [
         ('Au', 'Austria'),
