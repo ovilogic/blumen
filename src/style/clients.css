@@ -22,7 +22,7 @@
     flex-direction: row;
     /* align-items: center; */
     height: 22px;
-    margin-bottom: 40px;
+    margin-bottom: 4px;
 }
 
 
@@ -53,4 +53,33 @@
 #required::after {
     content: '*';
     color: red;
+}
+
+.danger {
+    background-color: lightgray;
+    border-left: 6px solid magenta;
+  }
+
+.submit-strip {
+    background-color: blanchedalmond;
+    height: 50px;
+    margin-top: -16px;
+}
+
+#send-button {
+    float: right;
+    position: relative;
+    right: 10%;
+    top: 10px;
+    width: 150px;
+    color: white;
+    background-color: #3a3038;
+    border: inset black 1px;
+    
+}
+
+#send-button:active {
+    border: 1px white inset;
+    color: grey;
+    
 }
