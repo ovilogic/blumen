@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+/* #altele {
+    float: left;
+    
+} */
+
+/* #altele+label {
+ 
+    display: block;
+    float: left;
+
+
+} */
+
+.other {
+
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    height: 22px;
+    margin-bottom: 40px;
+}
+
+
+#altele-textarea {
+    width: 200px;
+    overflow: hidden;
+    margin-top: 0px;
+    height: 10px;
+    
+}
+
+#details-item {
+    width: 300px;
+    overflow: hidden;
+    margin-top: 0px;
+    height: 10px;
+    
+}
+
+#required {
+    width: 200px;
+}
+
+#detail-text {
+    width: 200px;
+}
+
+#required::after {
+    content: '*';
+    color: red;
+}

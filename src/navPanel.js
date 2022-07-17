@@ -27,7 +27,7 @@ const NavPanel = () => {
                       </IconContext.Provider>
                     </Link>
                     <Link className='links' to="/produse">Produse</Link>
-                    <Link className='links' to="/">Plante la ghiveci</Link>
+                    <Link className='links' to="#">Plante la ghiveci</Link>
                     <Link className='links' to="#link">Decoratiuni si aranjamente florale</Link>
                     <Link className='links' to="#home">Productie proprie</Link>
                     <Link className='links' to="/clienti">Clienti</Link>
