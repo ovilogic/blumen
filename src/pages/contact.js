@@ -78,7 +78,7 @@ const Contact = () => {
                                         onChange={(e) => setSubject(e.target.value)}
                                          placeholder="Scrie ceva.." style={{height: '170px'}}>
                                     </textarea>
-                                <input type="submit"/>
+                                <input type="submit" />
                             </form>
                         </div>
                     </div>
