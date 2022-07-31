@@ -28,4 +28,35 @@ class Mesaj(models.Model):
         return self.prenume
 
 
+class Client(models.Model):
+    # DOMENIU_CHOICES = [
+    #     ('flo', 'florarie'),
+    #     ('dec', 'decorator florist'),
+    #     ('hot', 'hoteluri / restaurante'),
+    #     ('org', 'organizatori evenimente'),
+    #     ('ing', 'ingrijire morminte'),
+    #     ('gra', 'gradinari'),
+    #     ('ame', 'amenajari interioare'),
+    #     ('pre', 'prestari servicii'),
+    #     ('arh', 'arhitectura peisagistica'),
+    #     ('des', 'design'),
+    #     ('alt', 'altele')
+    # ]
+    # domeniu = models.CharField(max_length=3, choices=DOMENIU_CHOICES)
+    denumire_firma = models.CharField(max_length=250, default='')
+    strada = models.CharField(max_length=250, default='')
+    cod_postal = models.CharField(max_length=250, default='')
+    telefon = models.CharField(max_length=250, default='')
+    fax = models.CharField(max_length=250, default='')
+    email = models.CharField(max_length=250, default='')
+
+    doresc = models.BooleanField(default=False)
+
+    CUI = models.CharField(max_length=250, default='')
+    reg_comertului = models.CharField(max_length=250, default='')
+    banca = models.CharField(max_length=250, default='')
+    cont_bancar = models.CharField(max_length=250, default='')
+
+    def __str__(self):
+        return self.denumire_firma
 

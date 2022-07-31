@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from .models import Mesaj
+from .models import Mesaj, Client
 
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .serializers import MesajSerializer
+from .serializers import MesajSerializer, ClientsSerializer
 
 # @api_view(['GET', 'POST'])
 # def mesaje_list(request):
@@ -32,6 +32,19 @@ class MesajView(viewsets.ModelViewSet):
         if mesajPrimit.is_valid():
             mesajPrimit.save()
             return Response(mesajPrimit.data, status=status.HTTP_201_CREATED)
+        else:
+            print(mesajPrimit.errors)
+            return Response(mesajPrimit.errors)
+
+class ClientsView(viewsets.ModelViewSet):
+    serializer_class = ClientsSerializer
+    queryset = Client.objects.all()
+
+    def post(self, request):
+        mesajPrimit = MesajSerializer(data=request.data)
+        if mesajPrimit.is_valid():
+            mesajPrimit.save()
+            return Response(f'asta am primit de la frontend: {mesajPrimit.data}', status=status.HTTP_201_CREATED)
         else:
             print(mesajPrimit.errors)
             return Response(mesajPrimit.errors)
