@@ -57,6 +57,15 @@ class Client(models.Model):
     banca = models.CharField(max_length=250, default='')
     cont_bancar = models.CharField(max_length=250, default='')
 
+    admin_nume = models.CharField(max_length=250, default='')
+    admin_prenume = models.CharField(max_length=250, default='')
+    admin_data_nasterii = models.CharField(max_length=250, default='')
+
+    contact_nume = models.CharField(max_length=250, default='')
+    contact_prenume = models.CharField(max_length=250, default='')
+    contact_data_nasterii = models.CharField(max_length=250, default='')
+
+
     def __str__(self):
         return self.denumire_firma
 

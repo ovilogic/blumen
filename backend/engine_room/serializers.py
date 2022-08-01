@@ -16,11 +16,8 @@ class ClientsSerializer(serializers.ModelSerializer):
         model = Client
         fields = ['id', 'denumire_firma', 'strada', 'cod_postal', 'telefon',
                   'fax', 'email', 'doresc', 'CUI',
-                  'reg_comertului', 'banca', 'cont_bancar',]
-
-
-
-        '''  
+                  'reg_comertului', 'banca', 'cont_bancar',
                   'admin_nume', 'admin_prenume', 'admin_data_nasterii',
-                  'aflat'
-        '''
+                  'contact_nume', 'contact_prenume', 'contact_data_nasterii']
+
+
