@@ -67,14 +67,15 @@
 }
 
 #send-button {
-    float: right;
-    position: relative;
+    /* float: right; */
+    /* position: relative;
     right: 10%;
-    top: 10px;
+    top: 10px; */
     width: 150px;
     color: white;
     background-color: #3a3038;
     border: inset black 1px;
+    /* margin-top: -16px; */
     
 }
 

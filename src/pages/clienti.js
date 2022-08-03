@@ -6,6 +6,9 @@ import { useState } from "react";
 import { BsBank } from "react-icons/bs";
 
 const Clients = () => {
+    const [ domeniu, setDomeniu ] = useState()
+
+
 
     const [company, setCompany] = useState('')
     const [address, setAddress] = useState('')
@@ -14,13 +17,22 @@ const Clients = () => {
     const [fax, setFax] = useState('')
     const [email, setEmail] = useState('')
     const [subscribe, setSubscribe] = useState(false)
-    const [financial, setFinancial] = useState({
-        CUI: '',
-        reg_comertului: '',
-        banca: '',
-        cont_bancar: ''
+    
+    const [ cui, setCui ] = useState()
+    const [ reg_comertului, setReg ] = useState()
+    const [ banca, setBanca ] = useState()
+    const [ cont_bancar, setCont ] = useState()
 
-    })
+    const [ ownerN, setOwnerN ] = useState()
+    const [ ownerFore, setOwnerFore ] = useState()
+    const [ ownerDOB, setOwnerDOB ] = useState()
+
+    const [ contactN, setContactN ] = useState()
+    const [ contactFore, setContactFore ] = useState()
+    const [ contactDOB, setContactDOB ] = useState()
+
+    const [ hear, setHear ] = useState()
+
 
     let saveClient = () => {
         const apiEntryPoint = "http://localhost:8000/api/clients/";
@@ -34,8 +46,17 @@ const Clients = () => {
                 telefon: tel,
                 fax: fax,
                 email: email,
-                doresc: subscribe
-
+                doresc: subscribe,
+                CUI: cui,
+                reg_comertului: reg_comertului,
+                banca: banca,
+                cont_bancar: cont_bancar,
+                admin_nume: ownerN,
+                admin_prenume: ownerFore,
+                admin_data_nasterii: ownerDOB,
+                contact_nume: contactN,
+                contact_prenume: contactFore,
+                contact_data_nasterii: contactDOB
             })
         })
     }
@@ -50,7 +71,8 @@ const Clients = () => {
                     <div>
                         <h4>Domeniu de activitate</h4><br />
                         {/* Checkbox list */}
-                        <input type="checkbox" id="florarie" name="domeniu_de_activitate" value="florarie" />
+                        <input type="checkbox" id="florarie" name="domeniu_de_activitate" value='florarie' 
+                            />
                         <label for="florarie">&nbsp; florarie</label><br/>
                         <input type="checkbox" id="decorator" name="domeniu_de_activitate" value="decorator, florist" />
                         <label for="decorator">&nbsp; decorator florist</label><br/>
@@ -143,29 +165,29 @@ const Clients = () => {
                         {/* Financial details */}
                         <div className="details">
                             <label id="detail-text" for="altele">&nbsp;C.U.I: &nbsp;</label>
-                            <input type='text' id="details-item" value={financial.CUI}
-                                onChange={(e) => setFinancial({ CUI: e.target.value,
-                                    reg_comertului: financial.reg_comertului,
-                                    banca: financial.banca,
-                                    cont_bancar: financial.cont_bancar})}>
+                            <input type='text' id="details-item" value={cui}
+                                onChange={(e) => setCui(e.target.value)}>
                             </input>
                         </div>
 
                         <div className="details">
                             <label id="detail-text" for="altele">&nbsp;Reg. comertului: &nbsp;</label>
-                            <input type='text' id="details-item" >
+                            <input type='text' id="details-item" value={reg_comertului}
+                                onChange={(e) => setReg(e.target.value)}>
                             </input>
                         </div>
 
                         <div className="details">
                             <label id="detail-text" for="altele">&nbsp;Banca: &nbsp;</label>
-                            <input type='text' id="details-item" >
+                            <input type='text' id="details-item" value={banca}
+                                onChange={(e) => setBanca(e.target.value)}>
                             </input>
                         </div>
 
                         <div className="details">
                             <label id="detail-text" for="altele">&nbsp;Cont bancar: &nbsp;</label>
-                            <input type='text' id="details-item" >
+                            <input type='text' id="details-item" value={cont_bancar}
+                                onChange={(e) => setCont(e.target.value)}>
                             </input>
                         </div><br />
 
@@ -173,19 +195,22 @@ const Clients = () => {
                         {/* Non-required fields */}
                         <div className="details">
                             <label id="detail-text" for="altele">&nbsp;Numele: &nbsp;</label>
-                            <input type='text' id="details-item" >
+                            <input type='text' id="details-item" value={ownerN}
+                                onChange={(e) => setOwnerN(e.target.value)}>
                             </input>
                         </div>
 
                         <div className="details">
                             <label id="detail-text" for="altele">&nbsp;Prenumele: &nbsp;</label>
-                            <input type='text' id="details-item" >
+                            <input type='text' id="details-item" value={ownerFore}
+                                onChange={(e) => setOwnerFore(e.target.value)}>
                             </input>
                         </div>
 
                         <div className="details">
                             <label id="detail-text" for="altele">&nbsp;Data nasterii: &nbsp;</label>
-                            <input type='text' id="details-item" >
+                            <input type='text' id="details-item" value={ownerDOB}
+                                onChange={(e) => setOwnerDOB(e.target.value)}>
                             </input>
                         </div>
 
@@ -193,19 +218,22 @@ const Clients = () => {
                         {/* Non-required fields */}
                         <div className="details">
                             <label id="detail-text" for="altele">&nbsp;Numele: &nbsp;</label>
-                            <input type='text' id="details-item" >
+                            <input type='text' id="details-item" value={contactN}
+                                onChange={(e) => setContactN(e.target.value)}>
                             </input>
                         </div>
 
                         <div className="details">
                             <label id="detail-text" for="altele">&nbsp;Prenumele: &nbsp;</label>
-                            <input type='text' id="details-item" >
+                            <input type='text' id="details-item" value={contactFore}
+                                onChange={(e) => setContactFore(e.target.value)}>
                             </input>
                         </div>
 
                         <div className="details">
                             <label id="detail-text" for="altele">&nbsp;Data nasterii: &nbsp;</label>
-                            <input type='text' id="details-item" >
+                            <input type='text' id="details-item" value={contactDOB}
+                                onChange={(e) => setContactDOB(e.target.value)}>
                             </input>
                         </div>
 
@@ -234,7 +262,7 @@ const Clients = () => {
                             </input>
                     </div><br />
 
-                    <div class="danger">
+                    <div className="danger">
                         <p><strong>Atentie!&nbsp;</strong>
                         Fiind producatori, ne adresam in primul rand clientilor revanzatori si micilor producatori de plante.
                         Din acest motiv va rugam sa aveti intelegere pentru conditiile ce le cerem:<br />
@@ -243,19 +271,24 @@ const Clients = () => {
                         </p>
                     </div>
 
-                    <div className="submit-strip">
-                        <button id="send-button" type="button"
-                            onClick={() => {
+                   
+                        <button id="send-button" type="submit"
+                            method='post'
+                            onClick={(e) => {
                                 saveClient();
-                                setCompany('');
-                                setAddress('');
-                                setAddress2('');
-                                setTel('');
-                                setFax('');
-                                setEmail('');
-                                setSubscribe(false)
-                            }}>Trimite</button>
-                    </div>
+                                e.preventDefault();
+                                
+                                // setCompany('');
+                                // setAddress('');
+                                // setAddress2('');
+                                // setTel('');
+                                // setFax('');
+                                // setEmail('');
+                                // setSubscribe(false)
+                            }}>Trimite
+                        </button>
+                       
+                    
                      
 
                 </form>
