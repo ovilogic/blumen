@@ -41,13 +41,13 @@ class ClientsView(viewsets.ModelViewSet):
     queryset = Client.objects.all()
 
     def post(self, request):
-        mesajPrimit = MesajSerializer(data=request.data)
-        if mesajPrimit.is_valid():
-            mesajPrimit.save()
-            return Response(f'asta am primit de la frontend: {mesajPrimit.data}', status=status.HTTP_201_CREATED)
+        clientPrimit = ClientsSerializer(data=request.data)
+        if clientPrimit.is_valid():
+            clientPrimit.save()
+            return Response(clientPrimit.data, status=status.HTTP_201_CREATED)
         else:
-            print(mesajPrimit.errors)
-            return Response(mesajPrimit.errors)
+            print(clientPrimit.errors)
+            return Response(clientPrimit.errors)
 
 
 # the default view, the one for a '' request
