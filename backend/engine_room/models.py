@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 
 
 class Mesaj(models.Model):
@@ -28,42 +29,42 @@ class Mesaj(models.Model):
         return self.prenume
 
 
-class Client(models.Model):
-    # DOMENIU_CHOICES = [
-    #     ('flo', 'florarie'),
-    #     ('dec', 'decorator florist'),
-    #     ('hot', 'hoteluri / restaurante'),
-    #     ('org', 'organizatori evenimente'),
-    #     ('ing', 'ingrijire morminte'),
-    #     ('gra', 'gradinari'),
-    #     ('ame', 'amenajari interioare'),
-    #     ('pre', 'prestari servicii'),
-    #     ('arh', 'arhitectura peisagistica'),
-    #     ('des', 'design'),
-    #     ('alt', 'altele')
-    # ]
-    # domeniu = models.CharField(max_length=3, choices=DOMENIU_CHOICES)
-    denumire_firma = models.CharField(max_length=250, default='')
-    strada = models.CharField(max_length=250, default='')
-    cod_postal = models.CharField(max_length=250, default='')
-    telefon = models.CharField(max_length=250, default='')
-    fax = models.CharField(max_length=250, default='')
-    email = models.CharField(max_length=250, default='')
+class Client(forms.Form):
+    DOMENIU_CHOICES = [
+        ('flo', 'florarie'),
+        ('dec', 'decorator florist'),
+        ('hot', 'hoteluri / restaurante'),
+        ('org', 'organizatori evenimente'),
+        ('ing', 'ingrijire morminte'),
+        ('gra', 'gradinari'),
+        ('ame', 'amenajari interioare'),
+        ('pre', 'prestari servicii'),
+        ('arh', 'arhitectura peisagistica'),
+        ('des', 'design'),
+        ('alt', 'altele')
+    ]
+    domeniu = forms.ChoiceField(widget=forms.RadioSelect, choices=DOMENIU_CHOICES)
+    denumire_firma = forms.CharField(max_length=250)
+    strada = forms.CharField(max_length=250)
+    cod_postal = forms.CharField(max_length=250)
+    telefon = forms.CharField(max_length=250)
+    fax = forms.CharField(max_length=250)
+    email = forms.CharField(max_length=250)
 
-    doresc = models.BooleanField(default=False)
+    doresc = forms.CheckboxInput()
 
-    CUI = models.CharField(max_length=250, default='')
-    reg_comertului = models.CharField(max_length=250, default='')
-    banca = models.CharField(max_length=250, default='')
-    cont_bancar = models.CharField(max_length=250, default='')
+    CUI = forms.CharField(max_length=250)
+    reg_comertului = forms.CharField(max_length=250)
+    banca = forms.CharField(max_length=250)
+    cont_bancar = forms.CharField(max_length=250)
 
-    admin_nume = models.CharField(max_length=250, default='')
-    admin_prenume = models.CharField(max_length=250, default='')
-    admin_data_nasterii = models.CharField(max_length=250, default='')
+    admin_nume = forms.CharField(max_length=250)
+    admin_prenume = forms.CharField(max_length=250)
+    admin_data_nasterii = forms.CharField(max_length=250)
 
-    contact_nume = models.CharField(max_length=250, default='')
-    contact_prenume = models.CharField(max_length=250, default='')
-    contact_data_nasterii = models.CharField(max_length=250, default='')
+    contact_nume = forms.CharField(max_length=250)
+    contact_prenume = forms.CharField(max_length=250)
+    contact_data_nasterii = forms.CharField(max_length=250)
 
 
     def __str__(self):
