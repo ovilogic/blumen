@@ -28,45 +28,47 @@ class Mesaj(models.Model):
     def __str__(self):
         return self.prenume
 
-
+# DOMENIU_CHOICES = [
+#         ('flo', 'florarie'),
+#         ('dec', 'decorator florist'),
+#         ('hot', 'hoteluri / restaurante'),
+#         ('org', 'organizatori evenimente'),
+#         ('ing', 'ingrijire morminte'),
+#         ('gra', 'gradinari'),
+#         ('ame', 'amenajari interioare'),
+#         ('pre', 'prestari servicii'),
+#         ('arh', 'arhitectura peisagistica'),
+#         ('des', 'design'),
+#         ('alt', 'altele')
+#     ]
+'''
 class Client(forms.Form):
-    DOMENIU_CHOICES = [
-        ('flo', 'florarie'),
-        ('dec', 'decorator florist'),
-        ('hot', 'hoteluri / restaurante'),
-        ('org', 'organizatori evenimente'),
-        ('ing', 'ingrijire morminte'),
-        ('gra', 'gradinari'),
-        ('ame', 'amenajari interioare'),
-        ('pre', 'prestari servicii'),
-        ('arh', 'arhitectura peisagistica'),
-        ('des', 'design'),
-        ('alt', 'altele')
-    ]
-    domeniu = forms.ChoiceField(widget=forms.RadioSelect, choices=DOMENIU_CHOICES)
-    denumire_firma = forms.CharField(max_length=250)
-    strada = forms.CharField(max_length=250)
-    cod_postal = forms.CharField(max_length=250)
-    telefon = forms.CharField(max_length=250)
-    fax = forms.CharField(max_length=250)
-    email = forms.CharField(max_length=250)
 
-    doresc = forms.CheckboxInput()
-
-    CUI = forms.CharField(max_length=250)
-    reg_comertului = forms.CharField(max_length=250)
-    banca = forms.CharField(max_length=250)
-    cont_bancar = forms.CharField(max_length=250)
-
-    admin_nume = forms.CharField(max_length=250)
-    admin_prenume = forms.CharField(max_length=250)
-    admin_data_nasterii = forms.CharField(max_length=250)
-
-    contact_nume = forms.CharField(max_length=250)
-    contact_prenume = forms.CharField(max_length=250)
-    contact_data_nasterii = forms.CharField(max_length=250)
-
+    # domeniu = forms.ChoiceField(widget=forms.RadioSelect, choices=DOMENIU_CHOICES)
+    denumire_firma = forms.CharField()
+    # strada = forms.CharField(max_length=250)
+    # cod_postal = forms.CharField(max_length=250)
+    # telefon = forms.CharField(max_length=250)
+    # fax = forms.CharField(max_length=250)
+    # email = forms.CharField(max_length=250)
+    #
+    # # doresc = forms.CheckboxInput()
+    #
+    # CUI = forms.CharField(max_length=250)
+    # reg_comertului = forms.CharField(max_length=250)
+    # banca = forms.CharField(max_length=250)
+    # cont_bancar = forms.CharField(max_length=250)
+    #
+    # admin_nume = forms.CharField(max_length=250)
+    # admin_prenume = forms.CharField(max_length=250)
+    # admin_data_nasterii = forms.CharField(max_length=250)
+    #
+    # contact_nume = forms.CharField(max_length=250)
+    # contact_prenume = forms.CharField(max_length=250)
+    # contact_data_nasterii = forms.CharField(max_length=250)
+    #
 
     def __str__(self):
         return self.denumire_firma
 
+'''
